@@ -130,12 +130,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #f0f0f0; /* Fallback color */
         }
 
         .cute-gif {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Ensures the cat fills the circle */
         }
 
         h1 {
@@ -196,7 +197,7 @@
         <div id="screen-2">
             <div class="rose-card">
                 <div class="sticker-container">
-                    <img src="https://i.pinimg.com/originals/dc/8e/d5/dc8ed5665f80cb6e4695034c4f34680e.gif" 
+                    <img src="https://media.tenor.com/N_8P7lCg8q0AAAAC/cat-and-flower.gif" 
                          alt="Cute Cat Rose" 
                          class="cute-gif"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:4rem;\'>🐱🌹</div>'">
