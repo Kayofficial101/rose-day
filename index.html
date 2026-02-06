@@ -126,17 +126,29 @@
             height: 150px;
             margin: 0 auto 15px auto;
             border-radius: 50%;
-            overflow: hidden; /* Keeps gif contained */
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f0f0f0; /* Fallback color */
+            background: #fff;
         }
 
         .cute-gif {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the cat fills the circle */
+            object-fit: cover;
+        }
+
+        /* Style for Tenor embed */
+        .tenor-gif-embed {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .tenor-gif-embed iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border-radius: 50%;
         }
 
         h1 {
@@ -197,10 +209,10 @@
         <div id="screen-2">
             <div class="rose-card">
                 <div class="sticker-container">
-                    <img src="https://media.tenor.com/N_8P7lCg8q0AAAAC/cat-and-flower.gif" 
-                         alt="Cute Cat Rose" 
-                         class="cute-gif"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:4rem;\'>🐱🌹</div>'">
+                    <!-- Using direct GIF URL from Tenor's media CDN -->
+                    <img src="https://media.tenor.com/wRte9hN-XU0AAAAi/cat-and-flower.gif" 
+                         alt="Cute Cat with Rose" 
+                         class="cute-gif">
                 </div>
                 
                 <h1>Happy Rose Day Sakshi! 🌹</h1>
