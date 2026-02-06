@@ -124,19 +124,26 @@
         .sticker-container {
             width: 150px;
             height: 150px;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 5px auto; /* Reduced margin bottom slightly */
             border-radius: 50%;
-            overflow: hidden; /* Keeps gif contained */
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f0f0f0; /* Fallback color */
+            background-color: #f0f0f0;
         }
 
         .cute-gif {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the cat fills the circle */
+            object-fit: cover;
+        }
+        
+        /* New styles for the extra emojis */
+        .extra-emoji-row {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.8s ease 0.3s backwards; /* Slight delay so they appear after card pops */
         }
 
         h1 {
@@ -200,9 +207,13 @@
                     <img src="https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif" 
                          alt="Cute Cat Rose" 
                          class="cute-gif"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:4rem;\'>🐱🌹</div>'">
+                         onerror="this.style.display='none';">
                 </div>
                 
+                <div class="extra-emoji-row">
+                    🐱🌹
+                </div>
+
                 <h1>Happy Rose Day Sakshi! 🌹</h1>
                 
                 <p class="message">
