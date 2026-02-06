@@ -209,10 +209,12 @@
         <div id="screen-2">
             <div class="rose-card">
                 <div class="sticker-container">
-                    <!-- Using direct GIF URL from Tenor's media CDN -->
-                    <img src="https://media.tenor.com/wRte9hN-XU0AAAAi/cat-and-flower.gif" 
+                    <!-- Cat with rose GIF - multiple fallback sources -->
+                    <img id="cat-gif" 
+                         src="https://i.imgur.com/5zGNxPJ.gif" 
                          alt="Cute Cat with Rose" 
-                         class="cute-gif">
+                         class="cute-gif"
+                         onerror="tryNextGif()">
                 </div>
                 
                 <h1>Happy Rose Day Sakshi! 🌹</h1>
@@ -230,6 +232,28 @@
     </div>
 
     <script>
+        // Fallback GIF URLs for the cat with rose
+        const gifUrls = [
+            'https://i.imgur.com/5zGNxPJ.gif',
+            'https://media1.tenor.com/m/wRte9hN-XU0AAAAC/cat-and-flower.gif',
+            'https://i.pinimg.com/originals/dc/8e/d5/dc8ed5665f80cb6e4695034c4f34680e.gif',
+            'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBkNmU4ZjE4YjE4YjI4ZjE4YjI4ZjE4YjI4ZjE4YjI4ZjE4YjI4ZjE4YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3o7btPCcdNniyf0ArS/giphy.gif'
+        ];
+        let currentGifIndex = 0;
+
+        function tryNextGif() {
+            currentGifIndex++;
+            const img = document.getElementById('cat-gif');
+            
+            if (currentGifIndex < gifUrls.length) {
+                img.src = gifUrls[currentGifIndex];
+            } else {
+                // All GIFs failed, show emoji fallback
+                img.style.display = 'none';
+                img.parentElement.innerHTML = '<div style="font-size:4rem;">🐱🌹</div>';
+            }
+        }
+
         function openCard() {
             const s1 = document.getElementById('screen-1');
             const s2 = document.getElementById('screen-2');
